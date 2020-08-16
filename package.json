@@ -4,20 +4,12 @@
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
     "autoprefixer": "^9.8.6",
-    "babel-loader": "^8.0.5",
-    "css-loader": "^3.6.0",
-    "file-loader": "^6.0.0",
-    "mini-css-extract-plugin": "^0.10.0",
     "npm-watch": "^0.6.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "style-loader": "^1.2.1",
-    "tailwindcss": "^1.6.2",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.12"
+    "tailwindcss": "^1.6.2"
   },
   "scripts": {
     "build": "tailwindcss build src/index.css -o tailwind.css",
@@ -36,8 +28,5 @@
       ]
     }
   },
-  "dependencies": {},
-  "sideEffects": [
-    "**/*.js"
-  ]
+  "dependencies": {}
 }
