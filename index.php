@@ -4,7 +4,7 @@
  * Plugin Name: Tailwind for WP
  * Plugin URI: https://github.com/fueledonbacon/tailwind-wp-plugin.git
  * Description: Tailwind CSS utilities
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Ryan Cwynar
  *
  * @package tailwind
