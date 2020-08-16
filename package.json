@@ -1,6 +1,6 @@
 {
   "name": "tailwind-wp-plugin",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
@@ -60,7 +60,6 @@
     "styled-components": "^5.1.1"
   },
   "sideEffects": [
-    "**/*.ts",
     "**/*.js"
   ]
 }
