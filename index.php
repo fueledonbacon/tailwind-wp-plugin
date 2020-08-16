@@ -34,9 +34,9 @@ function tailwind_load_textdomain()
 function tailwind_plugin_scripts()
 {
   wp_enqueue_style('tailwind-style',
-    plugins_url('dist/tailwind.css', __FILE__),            // script file
+    plugins_url('tailwind.css', __FILE__),            // script file
     array(),  // dependencies
-    filemtime(plugin_dir_path(__FILE__) . 'dist/tailwind.css') //set version to last modified time
+    filemtime(plugin_dir_path(__FILE__) . 'tailwind.css') //set version to last modified time
   );
 }
 
