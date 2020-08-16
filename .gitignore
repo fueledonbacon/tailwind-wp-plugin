@@ -33,3 +33,4 @@ Thumbs.db
 
 # ignore node dependency directories
 node_modules/
+tailwind.zip

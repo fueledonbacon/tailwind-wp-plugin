@@ -13,7 +13,8 @@
   },
   "scripts": {
     "build": "tailwindcss build src/index.css -o tailwind.css",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "zip" : "zip -r9 tailwind.zip . -x *.git* *node_modules/**\\* tailwind.zip .DS_Store src/**\\*"
   },
   "watch": {
     "build": {
