@@ -9,7 +9,7 @@ Just a plugin you can customize to your own theme and use to have Tailwind CSS i
    - Node and NPM
 2. Clone this repository to the `/wp-content/plugins/` folder of your local WordPress installation using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
 3. Run `npm install` in terminal to install dependencies.
-4. Run `npm run start` to start the development process.
+4. Run `npm run build` to generate your tailwind css.
 5. In WordPress, activate the "Fueled on Bacon Blocks" plugin.
 
 ## Exporting

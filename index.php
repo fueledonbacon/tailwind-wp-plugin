@@ -7,7 +7,7 @@
  * Version: 1.0.0
  * Author: Ryan Cwynar
  *
- * @package fueledonbacon
+ * @package tailwind
  */
 
 defined('ABSPATH') || exit;
@@ -50,38 +50,13 @@ function tailwind_custom_sizes($sizes)
   ));
 }
 
-/** 
- * Add custom "Podkit" block category
- * 
- * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#managing-block-categories
- */
-add_filter('block_categories', 'tailwind_block_categories', 10, 2);
-
-function tailwind_block_categories($categories, $post)
-{
-  $array = array_merge(
-    $categories,
-    array(
-      array(
-        'slug' => 'tailwind',
-        'title' => __('Tailwind', 'tailwind'),
-        'icon'  => null,
-      ),
-    )
-  );
-  return $array;
-}
-
 /**
- * Registers all block assets so that they can be enqueued through the Block Editor in
- * the corresponding context.
+ * Makes Tailwind available in the block editor
  *
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
  */
 add_action('init', 'tailwind_register_blocks');
 add_action('enqueue_block_editor_assets', 'tailwind_register_blocks');
-
-
 
 function tailwind_register_blocks()
 {
@@ -91,31 +66,13 @@ function tailwind_register_blocks()
     return;
   }
 
-  // Register the block editor stylesheet.
-  wp_register_style(
-    'tailwind-editor-styles',                      // label
-    plugins_url('build/editor.css', __FILE__),          // CSS file
-    array('wp-edit-blocks'),                    // dependencies
-    filemtime(plugin_dir_path(__FILE__) . 'build/editor.css')  // set version as file last modified time
-  );
-
   // Register the front-end stylesheet.
   wp_register_style(
-    'tailwind-front-end-styles',                    // label
-    plugins_url('build/style.css', __FILE__),            // CSS file
+    'tailwind-style',                    // label
+    plugins_url('dist/tailwind.css', __FILE__),            // CSS file
     array(),    // dependencies
-    filemtime(plugin_dir_path(__FILE__) . 'build/style.css')  // set version as file last modified time
+    filemtime(plugin_dir_path(__FILE__) . 'dist/tailwind.css')  // set version as file last modified time
   );
-
-  if (function_exists('wp_set_script_translations')) {
-    /**
-     * Adds internationalization support. 
-     * 
-     * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
-     * @link https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
-     */
-    wp_set_script_translations('tailwind-editor-script', 'tailwind', plugin_dir_path(__FILE__) . '/languages');
-  }
 }
 
 // Custom PHP Below
@@ -123,9 +80,9 @@ function tailwind_register_blocks()
 function tailwind_plugin_scripts()
 {
   wp_enqueue_style('tailwind-style',
-    plugins_url('build/style.css', __FILE__),            // script file
-    array('theme-style'), 
-    filemtime(plugin_dir_path(__FILE__) . 'build/style.css')
+    plugins_url('dist/tailwind.css', __FILE__),            // script file
+    array(),  // dependencies
+    filemtime(plugin_dir_path(__FILE__) . 'dist/tailwind.css') //set version to last modified time
   );
 }
 
